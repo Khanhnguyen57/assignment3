@@ -1,5 +1,5 @@
 'use strict'
-const curUserJSON = sessionStorage.getItem('currentUser');
+const curUserJSON = localStorage.getItem('currentUser');
 const curUser = JSON.parse(curUserJSON);
 if (curUser == null) {
     window.location.href = '../pages/login.html'
@@ -25,7 +25,7 @@ saveBtn.addEventListener('click', function() {
         curUser.pageSize = parseInt(pageSizeInput.value)
         curUser.category = categoryInput.value
 
-        sessionStorage.setItem('currentUser', JSON.stringify(curUser))
+        localStorage.setItem('currentUser', JSON.stringify(curUser))
         alert('Lưu thành công')
         window.location.href = './news.html'
     }

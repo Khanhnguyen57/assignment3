@@ -1,5 +1,5 @@
 'use strict'
-const curUserJSON = sessionStorage.getItem('currentUser');
+const curUserJSON = localStorage.getItem('currentUser');
 const curUser = JSON.parse(curUserJSON);
 const container = document.getElementById('news-container')
 let UserArr = JSON.parse(localStorage.getItem('UserArr') || '[]')
@@ -23,7 +23,7 @@ const displayNews = (baiBao) => {
     baiBao.forEach(article => {
         const articleElement = document.createElement('div')
         articleElement.classList.add('card', 'flex-row', 'flex-wrap')
-        const imageUrl = article.urlToImage
+        const imageUrl = article.urlToImage ? article.urlToImage : 'https://via.placeholder.com/150'
 
         articleElement.innerHTML = `
         <div class="card flex-row flex-wrap">

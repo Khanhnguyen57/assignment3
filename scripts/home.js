@@ -5,7 +5,7 @@ const logoutZone = document.getElementById('main-content')
 const welcomeMessage = document.getElementById('xinChao')
 const logoutBtn = document.getElementById('btn-logout');
 
-const curUserJSON = sessionStorage.getItem('currentUser');
+const curUserJSON = localStorage.getItem('currentUser');
 const curUser = JSON.parse(curUserJSON);
 
 if (curUser === null) {
@@ -20,7 +20,7 @@ if (curUser === null) {
 if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
         if (confirm('Bạn có chắc muốn đăng xuất?')) {
-            sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('currentUser');
             window.location.reload();
         }
     });

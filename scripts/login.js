@@ -22,7 +22,7 @@ loginBtn.addEventListener('click', () => {
         if (user.passwork === password) {
             alert('Đăng nhập thành công!!')
 
-            sessionStorage.setItem('currentUser', JSON.stringify(user))
+            localStorage.setItem('currentUser', JSON.stringify(user))
 
             window.location.href = '../index.html'
             curUser.push(user)

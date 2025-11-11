@@ -1,5 +1,5 @@
 'use strict'
-const curUserJSON = sessionStorage.getItem('currentUser');
+const curUserJSON = localStorage.getItem('currentUser');
 const curUser = JSON.parse(curUserJSON);
 
 if (curUser == null) {
