@@ -16,6 +16,7 @@ let currentPage = 1;
 let pageSize = curUser.pageSize ? curUser.pageSize : 5;
 let totalResults = 0;
 let category = curUser.category ? curUser.category : 'general';
+let search = curUser.search
 let apiKey = '4b5bf8acf86e46f8bfba3e51b7adffd6'
 
 const displayNews = (baiBao) => {
@@ -75,7 +76,7 @@ btnPrev.addEventListener('click', () => {
 
 const fetchNews = async(page) => {
     try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page}&pageSize=${pageSize}&apiKey=${apiKey}`)
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?q=${search}&country=us&category=${category}&page=${page}&pageSize=${pageSize}&apiKey=${apiKey}`)
         const data = await response.json()
 
         totalResults = data.totalResults

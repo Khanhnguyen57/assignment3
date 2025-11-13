@@ -8,6 +8,7 @@ if (curUser == null) {
 const pageSizeInput = document.getElementById('input-page-size')
 const categoryInput = document.getElementById('input-category')
 const saveBtn = document.getElementById('btn-submit')
+const searchBtn = document.getElementById('input-search')
 
 const isValidInput = () => {
     const pageSize = parseInt(pageSizeInput.value);
@@ -24,6 +25,7 @@ saveBtn.addEventListener('click', function() {
     if (isValidInput()) {
         curUser.pageSize = parseInt(pageSizeInput.value)
         curUser.category = categoryInput.value
+        curUser.search = searchBtn.value
 
         localStorage.setItem('currentUser', JSON.stringify(curUser))
         alert('Lưu thành công')
